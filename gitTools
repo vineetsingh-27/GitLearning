@@ -1,0 +1,287 @@
+C:\Users\vinee>git version
+git version 2.27.0.windows.1
+
+C:\Users\vinee>d:
+
+D:\>cd LearnGit
+
+D:\LearnGit>dir
+ Volume in drive D is New Volume
+ Volume Serial Number is 968E-6E69
+
+ Directory of D:\LearnGit
+
+08-Jul-20  01:56 PM    <DIR>          .
+08-Jul-20  01:56 PM    <DIR>          ..
+               0 File(s)              0 bytes
+               2 Dir(s)  103,908,032,512 bytes free
+
+D:\LearnGit>git init
+Initialized empty Git repository in D:/LearnGit/.git/
+
+D:\LearnGit>git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+D:\LearnGit>git add HelloWorld.py
+
+D:\LearnGit>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   HelloWorld.py
+
+
+D:\LearnGit>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   HelloWorld.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        for_loop.py
+
+
+D:\LearnGit>git commit -m "initial commit"
+[master (root-commit) 79c0bbd] initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 HelloWorld.py
+
+D:\LearnGit>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        for_loop.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\LearnGit>git add for_loop.py
+
+D:\LearnGit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   for_loop.py
+
+
+D:\LearnGit>git commit -m "for loops understood"
+[master 605cacf] for loops understood
+ 1 file changed, 2 insertions(+)
+ create mode 100644 for_loop.py
+
+D:\LearnGit>git status
+On branch master
+nothing to commit, working tree clean
+
+D:\LearnGit>git log
+commit 605cacfcee699db2855fff280c24e7e34a3b1bd1 (HEAD -> master)
+Author: Vineet <vineet199927@gmail.com>
+Date:   Wed Jul 8 14:19:06 2020 -0700
+
+    for loops understood
+
+commit 79c0bbd2f3a7b55ece770104bb889703ba77399b
+Author: Vineet <vineet199927@gmail.com>
+Date:   Wed Jul 8 14:16:25 2020 -0700
+
+    initial commit
+
+D:\LearnGit>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   for_loop.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\LearnGit>git add for_loop.py
+
+D:\LearnGit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   for_loop.py
+
+
+D:\LearnGit>git rm --cached for_loop.py
+rm 'for_loop.py'
+
+D:\LearnGit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    for_loop.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        for_loop.py
+
+
+D:\LearnGit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    for_loop.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        for_loop.py
+
+
+D:\LearnGit>git add for_loop.py
+
+D:\LearnGit>git commit -m "updated for loop"
+[master da6d3ca] updated for loop
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+D:\LearnGit>git status
+On branch master
+nothing to commit, working tree clean
+
+D:\LearnGit>git branch dev
+
+D:\LearnGit>git checkout dev
+Switched to branch 'dev'
+
+D:\LearnGit>git status
+On branch dev
+nothing to commit, working tree clean
+
+D:\LearnGit>git status
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   HelloWorld.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\LearnGit>git add -am "on branch dev f1"
+error: unknown switch `a'
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    --renormalize         renormalize EOL of tracked files (implies -u)
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+    --chmod (+|-)x        override the executable bit of the listed files
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+D:\LearnGit>git commit -am "on branch dev f1"
+[dev 4984ec1] on branch dev f1
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+D:\LearnGit>git status
+On branch dev
+nothing to commit, working tree clean
+
+D:\LearnGit>git checkout master
+Switched to branch 'master'
+
+D:\LearnGit>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   HelloWorld.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\LearnGit>git commit -am "let's checkout"
+[master 12a94ab] let's checkout
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+D:\LearnGit>git checkout dev
+Switched to branch 'dev'
+
+D:\LearnGit>git status
+On branch dev
+nothing to commit, working tree clean
+
+D:\LearnGit>git status
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   for_loop.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\LearnGit>git commit -am "Again look"
+[dev 656ee14] Again look
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+D:\LearnGit>git status
+On branch dev
+nothing to commit, working tree clean
+
+D:\LearnGit>git checkout master
+Switched to branch 'master'
+
+D:\LearnGit>git commit -am "on branch master1.1"
+[master 0c8c176] on branch master1.1
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+D:\LearnGit>git checkout dev
+Switched to branch 'dev'
+
+D:\LearnGit>git commit -am "dev1.1"
+[dev 1bd5329] dev1.1
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+D:\LearnGit>git checkout master
+Switched to branch 'master'
+
+D:\LearnGit>git merge dev
+Auto-merging HelloWorld.py
+CONFLICT (content): Merge conflict in HelloWorld.py
+Automatic merge failed; fix conflicts and then commit the result.
+
+D:\LearnGit>git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        modified:   for_loop.py
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   HelloWorld.py
+
+
+D:\LearnGit>git commit -am "merge branch"
+[master 8db36e5] merge branch
+
+D:\LearnGit>git status
+On branch master
+nothing to commit, working tree clean
+
+D:\LearnGit>git merge dev
+Already up to date.
